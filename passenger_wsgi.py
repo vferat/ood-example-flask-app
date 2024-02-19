@@ -4,5 +4,5 @@ application = MyApp
 
 if __name__ == '__main__':
     import sys
-    print(sys.executable)
+    raise Exception(sys.executable)
     application.run()

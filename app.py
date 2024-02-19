@@ -1,6 +1,3 @@
-import sys
-raise Exception(sys.executable)
-
 from flask import Flask, render_template
 MyApp = Flask(__name__)
 

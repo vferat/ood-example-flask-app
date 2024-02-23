@@ -31,3 +31,7 @@ npm run build
 
 ## Flask
 
+### Install pyslurm
+
+Need to build ?
+

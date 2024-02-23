@@ -1,10 +1,31 @@
 <script>
+
+const apiEndpoint = '/api_v1/';
+
 export default {
   name: 'App',
   data() {
     return {
       name: 'test'
     }
+  },
+
+  mounted() {
+      this.fetchData();
+  },
+
+  methods: {
+      fetchData() {
+          console.log('fetching data');
+          fetch(apiEndpoint + '/greeting')
+              .then(response => response.json())
+              .then(data => {
+                  this.name = data.name;
+              })
+              .catch(error => {
+                  console.error('Error fetching data:', error);
+              });
+      }
   }
 }
 </script>

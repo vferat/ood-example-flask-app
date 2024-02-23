@@ -1,9 +1,12 @@
-from flask import Flask, render_template
-MyApp = Flask(__name__)
+from flask import Flask
+from api.api import api_bp
+from client.client import client_bp
 
-@MyApp.route("/")
-def hello():
-	return render_template('index.html')
+
+app = Flask(__name__)
+app.register_blueprint(api_bp, url_prefix='/api_v1')
+app.register_blueprint(client_bp, url_prefix='/client')
+
 
 if __name__ == "__main__":
-	MyApp.run()
+	app.run(port=5006, debug=True)

@@ -1,3 +1,33 @@
-## OnDemand/Passenger: Flask example app
+# OnDemand/Passenger: Flask + Vue example app
 
-This is a [Flask](http://flask.pocoo.org/) hello world example app for [the Passenger application server](https://www.phusionpassenger.com/) that has been modified to work with [OnDemand](https://openondemand.org/).
+## Vue
+
+```
+npm create vue@latest
+```
+
+Move to project folder
+```
+npm install
+```
+
+Change `vite.config.js` to remove hash from build filenames:
+```
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: `assets/[name].js`,
+        chunkFileNames: `assets/[name].js`,
+        assetFileNames: `assets/[name].[ext]`
+      }
+    }
+  }
+  ```
+
+Build
+```
+npm run build
+```
+
+## Flask
+

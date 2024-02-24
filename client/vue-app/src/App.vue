@@ -1,9 +1,13 @@
 <script>
+import FmriprepForm from './components/FmriprepForm.vue';
 
 const apiEndpoint = '/api_v1/';
 
 export default {
   name: 'App',
+  components: {
+    FmriprepForm
+  },
   data() {
     return {
       name: 'test'
@@ -31,7 +35,8 @@ export default {
 </script>
 
 <template>
- <h1> {{ name }} </h1>
+  <h1> {{ name }} </h1> <br>
+  <FmriprepForm />
 </template>
 
 <style scoped>

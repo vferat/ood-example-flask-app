@@ -1,7 +1,7 @@
 <script>
 import FmriprepForm from './components/FmriprepForm.vue';
 
-const apiEndpoint = '/api_v1/';
+const apiEndpoint = 'pun/dev/ood-example-flask-app/api_v1/';
 
 export default {
   name: 'App',

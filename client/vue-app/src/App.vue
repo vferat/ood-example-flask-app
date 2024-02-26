@@ -1,7 +1,7 @@
 <script>
 import FmriprepForm from './components/FmriprepForm.vue';
 
-const apiEndpoint = 'pun/dev/ood-example-flask-app/api_v1/';
+const apiEndpoint = 'api_v1/';
 
 export default {
   name: 'App',
@@ -22,7 +22,7 @@ export default {
   methods: {
       fetchData() {
           console.log('fetching data');
-          fetch(apiEndpoint + '/greeting')
+          fetch(apiEndpoint + 'greeting')
               .then(response => response.json())
               .then(data => {
                   this.name = data.name;

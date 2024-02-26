@@ -13,7 +13,7 @@
 
 <script>
 
-const apiEndpoint = "{{ url_for('api_bp.submit') }}";
+const apiEndpoint ='/api_v1/'
 
 
 export default {

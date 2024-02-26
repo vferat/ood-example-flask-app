@@ -24,7 +24,7 @@ export default {
     methods: {
       submit() {
           console.log('Submitting job');
-          fetch(apiEndpoint + '/submit')
+          fetch(apiEndpoint + 'submit')
               .then(response => response.json())
               .then(data => {
                   this.name = data.name;

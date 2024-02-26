@@ -33,5 +33,24 @@ npm run build
 
 ### Install pyslurm
 
-Need to build ?
+Use python in `/usr/bin/python`
 
+/usr/bin/pip-3.6 install -U packaging --user
+
+
+```
+
+
+```
+
+```
+conda deactivate
+cd /home/users/f/ferat/Documents/GitHub
+git clone https://github.com/PySlurm/pyslurm.git
+cd pyslurm
+
+pip-3.6 install cython --user
+
+/usr/bin/python setup.py build
+/usr/bin/python setup.py install --user
+```

@@ -28,7 +28,7 @@ export default {
           fetch(apiEndpoint + 'submit')
               .then(response => response.json())
               .then(data => {
-                  console.log(data.name);
+                  console.log(data.jobs);
               })
               .catch(error => {
                   console.error('Error fetching data:', error);

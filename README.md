@@ -35,13 +35,7 @@ npm run build
 
 Use python in `/usr/bin/python`
 
-/usr/bin/pip-3.6 install -U packaging --user
 
-
-```
-
-
-```
 
 ```
 conda deactivate
@@ -54,3 +48,9 @@ pip-3.6 install cython --user
 /usr/bin/python setup.py build
 /usr/bin/python setup.py install --user
 ```
+
+iF VERSION ERROR:
+```
+/usr/bin/pip-3.6 install -U packaging --user
+```
+

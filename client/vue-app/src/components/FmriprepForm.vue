@@ -1,52 +1,72 @@
 <template>
-    <form>
+  <div class="modal-backdrop">
+    <div class="modal-main">
+      <h1>fMRIPrep</h1>
+      <form>
         <label>BIDS dir</label>
         <input type="text" required v-model="bidsDir"/>
-    </form>
+        <button @click="submit">Run</button>
+      </form>
+    </div>
+  </div>
 </template>
 
 <script>
+
+const apiEndpoint = '/api_v1/';
+
 export default {
     data() {
         return {
             bidsDir: ''
         }
+    },
+    methods: {
+      submit() {
+          console.log('Submitting job');
+          fetch(apiEndpoint + '/submit')
+              .then(response => response.json())
+              .then(data => {
+                  this.name = data.name;
+              })
+              .catch(error => {
+                  console.error('Error fetching data:', error);
+              });
+      }
     }
 }
 </script>
 
 <style>
-  form {
-    max-width: 420px;
-    margin: 30px auto;
+  .modal-main {
+    width: 400px;
+    padding: 20px;
+    margin: 200px auto;
     background: white;
-    text-align: left;
-    padding: 40px;
     border-radius: 10px;
   }
-  label {
-    color: #aaa;
-    display: inline-block;
-    margin: 25px 0 15px;
-    font-size: 0.6em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-  }
-  input, select {
-    display: block;
-    padding: 10px 6px;
+  .modal-backdrop {
+    top: 0;
+    position: fixed;
+    background: rgba(0,0,0,0.5);
     width: 100%;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 1px solid #ddd;
-    color: #555;
+    height: 100%;
   }
-  input[type="checkbox"] {
-    display: inline-block;
-    width: 16px;
-    margin: 0 10px 0 0;
-    position: relative;
-    top: 2px;
+  .modal h1 {
+    color: #03cfb4;
+    border: none;
+    padding: 0;
+  }
+  .modal p {
+    font-style: normal;
+  }
+
+  /* sale styles */
+  .modal.sale {
+    background: crimson;
+    color: white;
+  }
+  .modal.sale h1 {
+    color: white;
   }
 </style>

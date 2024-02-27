@@ -21,6 +21,6 @@ def submit():
             script=script_path)
         job_id = desc.submit()
     except Exception as e:
-        return {'job': str(e)}
+        return {'job': str(script_path) + ' ' + str(e)}
     return {'job': job_id}
 

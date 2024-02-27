@@ -13,11 +13,14 @@ def greeting():
 
 @api_bp.route("/submit") # Blueprints don't use the Flask "app" context. They use their own blueprint's
 def submit():
-    script_path = os.path.join(scripts_folder, 'script.sh')
-    desc = pyslurm.JobSubmitDescription(
-        name="test-job",
-        cpus_per_task=1,
-        script=script_path)
-    job_id = desc.submit()
+    try:
+        script_path = os.path.join(scripts_folder, 'script.sh')
+        desc = pyslurm.JobSubmitDescription(
+            name="test-job",
+            cpus_per_task=1,
+            script=script_path)
+        job_id = desc.submit()
+    except Exception as e:
+        return {'job': str(e)}
     return {'job': job_id}
 

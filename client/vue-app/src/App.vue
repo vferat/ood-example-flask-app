@@ -45,7 +45,7 @@ export default {
 <main role="main">
 
   <div v-if = "showModal">
-    <FmriprepForm />
+    <FmriprepForm @close="toggleModal"/>
   </div>
 
   <section class="jumbotron text-center">

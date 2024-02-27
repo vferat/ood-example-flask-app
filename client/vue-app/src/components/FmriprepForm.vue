@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-backdrop">
+  <div class="modal-backdrop" @click.self="closeModal">
     <div class="modal-main">
       <h1>fMRIPrep</h1>
       <form>
@@ -33,6 +33,9 @@ export default {
               .catch(error => {
                   console.error('Error fetching data:', error);
               });
+      },
+      closeModal() {
+        this.$emit('close');
       }
     }
 }

@@ -2,7 +2,7 @@ import os
 from flask import Blueprint
 import pyslurm
 
-scripts_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../scripts')
+scripts_folder = os.apth.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../scripts'))
 
 
 api_bp = Blueprint('api_bp', __name__) # "API Blueprint"

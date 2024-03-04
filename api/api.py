@@ -45,7 +45,7 @@ def submit():
             cpus_per_task=1,
             script=rendered_script)
         job_id = desc.submit()
-        return {'job': job_id}
+        return {'job_id': job_id}
     except Exception as e:
         return {'Error': str(rendered_script) + ' ' + str(e)}
         

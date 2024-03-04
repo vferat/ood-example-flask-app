@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 
-echo "Hello world, I am running on node $HOSTNAME"
+echo "fmriprep {{ bids_dir }}"
 sleep 60

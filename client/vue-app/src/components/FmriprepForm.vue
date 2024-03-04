@@ -19,16 +19,25 @@ const apiEndpoint ='/pun/dev/ood-example-flask-app/api_v1/'
 export default {
     data() {
         return {
-            bidsDir: ''
+            bidsDir: '',
+            job_id: ''
         }
     },
     methods: {
       submit() {
           console.log('Submitting job');
-          fetch(apiEndpoint + 'submit')
+
+          const requestOptions = {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ bidsDir: this.bidsDir })
+          };
+
+          fetch(apiEndpoint + 'submit', requestOptions)
               .then(response => response.json())
               .then(data => {
-                  console.log(data.job);
+                  console.log(data.job_id);
+                  this.job_id = data.job_id;
               })
               .catch(error => {
                   console.error('Error fetching data:', error);

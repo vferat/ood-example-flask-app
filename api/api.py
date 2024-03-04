@@ -32,7 +32,7 @@ def greeting():
 @api_bp.route("/submit", methods=['POST'])
 def submit():
     data = request.get_json()
-    bids_dir = data['bids_dir']
+    bids_dir = data['bidsDir']
 
     template_path = os.path.join(scripts_folder, 'fmriprep', 'script.sh')
     context = {

@@ -30,7 +30,7 @@ export default {
           const requestOptions = {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ bidsDir: this.bidsDir })
+            body: JSON.stringify({ "bidsDir": this.bidsDir })
           };
 
           fetch(apiEndpoint + 'submit', requestOptions)

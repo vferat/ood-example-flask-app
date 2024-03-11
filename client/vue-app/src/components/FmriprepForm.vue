@@ -3,29 +3,44 @@
     <div class="modal-main">
       <h1>fMRIPrep</h1>
       <form>
-        <label>BIDS dir</label>
-        <input type="text" required v-model="bidsDir"/>
-        <br>  
-        <label>Skip BIDS validation</label>
-        <input type="checkbox" id="checkbox" v-model="skip_bids_validation" />
-        <br>
-        <label>Output spaces</label>
-        <select v-model="output_spaces" multiple>
-        <option>MNI152NLin2009aAsym</option>
-        <option>MNIInfant</option>
-        <option>MNIPediatricAsym</option>
-        </select>
-        <br>
-        <label>Bold to t1w degrees of freedom (bold2t1w-dof)</label>
-        <input type="radio" id="true" value=6 v-model="bold2t1w_dof" />
-        <label for="one">6</label>
-        <input type="radio" id="false" value=9 v-model="bold2t1w_dof" />
-        <label for="two">9</label>
-        <input type="radio" id="false" value=12 v-model="bold2t1w_dof" />
-        <label for="two">12</label>
-        <br>
-        <button @click="submit">Run</button>
-
+        <ul>
+          <li>
+            <label>BIDS dir</label>
+            <input type="text" required v-model="bidsDir"/>
+          </li> 
+          <li>
+            <label>Skip BIDS validation</label>
+            <input type="checkbox" id="checkbox" v-model="skip_bids_validation" />
+          </li>
+          <li>
+            <label>Output spaces</label>
+            <select v-model="output_spaces" multiple>
+              <option>MNI152NLin2009aAsym</option>
+              <option>MNIInfant</option>
+              <option>MNIPediatricAsym</option>
+            </select>
+          </li>
+          <li>
+            <label>Output spaces</label>
+            <select v-model="output_spaces" multiple>
+            <option>MNI152NLin2009aAsym</option>
+            <option>MNIInfant</option>
+            <option>MNIPediatricAsym</option>
+            </select>
+          </li>
+          <li>
+            <label>Bold to t1w degrees of freedom (bold2t1w-dof)</label>
+            <input type="radio" id="true" value=6 v-model="bold2t1w_dof" />
+            <label for="one">6</label>
+            <input type="radio" id="false" value=9 v-model="bold2t1w_dof" />
+            <label for="two">9</label>
+            <input type="radio" id="false" value=12 v-model="bold2t1w_dof" />
+            <label for="two">12</label>
+        </li>
+        <li>
+          <button @click="submit">Run</button>
+        </li>
+      </ul>
       </form>
     </div>
   </div>

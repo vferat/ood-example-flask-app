@@ -5,7 +5,27 @@
       <form>
         <label>BIDS dir</label>
         <input type="text" required v-model="bidsDir"/>
+
+        <label>Skip BIDS validation</label>
+        <input type="checkbox" id="checkbox" v-model="skip_bids_validation" />
+
+        <label>Output spaces</label>
+        <select v-model="output_spaces" multiple>
+        <option>MNI152NLin2009aAsym</option>
+        <option>MNIInfant</option>
+        <option>MNIPediatricAsym</option>
+        </select>
+
+        <label>Bold to t1w degrees of freedom (bold2t1w-dof)</label>
+        <input type="radio" id="true" value=6 v-model="bold2t1w_dof" />
+        <label for="one">6</label>
+        <input type="radio" id="false" value=9 v-model="bold2t1w_dof" />
+        <label for="two">9</label>
+        <input type="radio" id="false" value=12 v-model="bold2t1w_dof" />
+        <label for="two">12</label>
+
         <button @click="submit">Run</button>
+
       </form>
     </div>
   </div>
@@ -20,7 +40,11 @@ export default {
     data() {
         return {
             bidsDir: '',
-            job_id: ''
+            job_id: '',
+            skip_bids_validation: false,
+            bold2t1w_dof: 6,
+            output_spaces: []
+
         }
     },
     methods: {

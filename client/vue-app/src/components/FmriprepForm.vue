@@ -24,12 +24,8 @@
           <div>
             <input type="radio" id="dof6" value="6" v-model="bold2t1w_dof" />
             <label for="dof6">6</label>
-          </div>
-          <div>
             <input type="radio" id="dof9" value="9" v-model="bold2t1w_dof" />
             <label for="dof9">9</label>
-          </div>
-          <div>
             <input type="radio" id="dof12" value="12" v-model="bold2t1w_dof" />
             <label for="dof12">12</label>
           </div>
@@ -77,6 +73,7 @@ export default {
               .catch(error => {
                   console.error('Error fetching data:', error);
               });
+          this.$emit('close');
       },
       closeModal() {
         this.$emit('close');

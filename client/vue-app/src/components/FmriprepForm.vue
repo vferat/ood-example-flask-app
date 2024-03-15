@@ -68,15 +68,11 @@ export default {
               .then(data => {
                   console.log(data.job_id);
                   this.job_id = data.job_id;
-                  this.$emit('alert', { type: 'success',
-                                         message: 'Job ' + this.job_id + ' submitted!'
-                                      });
+                  this.$emit('alert');
               })
               .catch(error => {
                   console.error('Error fetching data:', error.message);
-                  this.$emit('alert', { type: 'error',
-                                         message: error.message
-                                      });
+                  this.$emit('alert');
               });
           this.$emit('close');
       },

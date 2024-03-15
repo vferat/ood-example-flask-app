@@ -11,7 +11,6 @@ export default {
   data() {
     return {
       name: 'test',
-      showModal: false,
       alert: null
     }
   },
@@ -33,7 +32,7 @@ export default {
           });
     },
     toggleModal() {
-      this.showModal = !this.showModal;
+      FmriprepForm.methods.closeModal();
       console.log('showModal:', this.showModal);
     },
     showAlert() {
@@ -53,7 +52,7 @@ export default {
 <main role="main">
 
   <div v-if = "showModal">
-    <FmriprepForm @message="showAlert" @close="toggleModal"/>
+    <FmriprepForm @message="showAlert"/>
   </div>
 
   <div v-if="alert" :style="{ backgroundColor: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'yellow' : 'green', padding: '10px' }">

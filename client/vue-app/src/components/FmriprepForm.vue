@@ -42,7 +42,6 @@
 
 const apiEndpoint ='/pun/dev/ood-example-flask-app/api_v1/'
 
-
 export default {
     data() {
         return {
@@ -69,14 +68,23 @@ export default {
               .then(data => {
                   console.log(data.job_id);
                   this.job_id = data.job_id;
+                  this.$emit('alert', { type: 'success',
+                                         message: 'Job ' + job_id + ' submitted!'
+                                      });
               })
               .catch(error => {
                   console.error('Error fetching data:', error);
+                  this.$emit('alert', { type: 'error',
+                                         message: error
+                                      });
               });
           this.$emit('close');
       },
       closeModal() {
         this.$emit('close');
+      },
+      showAlert() {
+      EventBus.$emit('show-alert', { message: 'This is an alert message!' });
       }
     }
 }

@@ -11,29 +11,38 @@ export default {
   data() {
     return {
       name: 'test',
-      showModal: false
+      showModal: false,
+      alert: null
     }
   },
 
   mounted() {
       this.fetchData();
+      FmriprepForm.$on('alert', this.showAlert);
   },
 
   methods: {
-      fetchData() {
-          console.log('fetching data');
-          fetch(apiEndpoint + 'greeting')
-              .then(response => response.json())
-              .then(data => {
-                  this.name = data.name;
-              })
-              .catch(error => {
-                  console.error('Error fetching data:', error);
-              });
-      },
-      toggleModal() {
+    fetchData() {
+      console.log('fetching data');
+      fetch(apiEndpoint + 'greeting')
+          .then(response => response.json())
+          .then(data => {
+              this.name = data.name;
+          })
+          .catch(error => {
+              console.error('Error fetching data:', error);
+          });
+    },
+    toggleModal() {
       this.showModal = !this.showModal;
       console.log('showModal:', this.showModal);
+    },
+    showAlert(data) {
+      this.alert = data;
+      setTimeout(this.hideAlert, 10000);
+    },
+    hideAlert() {
+      this.alert = null;
     }
   }
 }
@@ -41,8 +50,11 @@ export default {
 
 <template>
 
-
 <main role="main">
+  
+  <div v-if="alert" :style="{ backgroundColor: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'yellow' : 'green', padding: '10px' }">
+    {{ alert.message }}
+  </div>
 
   <div v-if = "showModal">
     <FmriprepForm @close="toggleModal"/>

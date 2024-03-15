@@ -69,7 +69,7 @@ export default {
                   console.log(data.job_id);
                   this.job_id = data.job_id;
                   this.$emit('alert', { type: 'success',
-                                         message: 'Job ' + job_id + ' submitted!'
+                                         message: 'Job ' + this.job_id + ' submitted!'
                                       });
               })
               .catch(error => {

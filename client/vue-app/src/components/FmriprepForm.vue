@@ -79,9 +79,9 @@ export default {
                   this.$emit('message');
                   console.log('emit message');
               });
-          this.closeModal();
+          this.toggleThis();
       },
-      closeModal() {
+      toggleThis() {
         this.show = !this.show;
       }
     }

@@ -32,8 +32,8 @@ export default {
           });
     },
     toggleModal() {
-      FmriprepForm.methods.closeModal();
-      console.log('showModal:', this.showModal);
+      FmriprepForm.methods.toggleThis();
+      console.log('showModal');
     },
     showAlert() {
       console.log('showAlert');

@@ -1,6 +1,6 @@
 <template>
-  <div v-if="show">
-      <div class="modal-backdrop" @click.self="closeModal">
+  <div v-if = "show">
+      <div class="modal-backdrop" @click.self="toggleThis">
       <div class="modal-main">
         <h1>fMRIPrep</h1>
         <form>
@@ -83,6 +83,7 @@ export default {
       },
       toggleThis() {
         this.show = !this.show;
+        console.log('toggleThis');
       }
     }
 }

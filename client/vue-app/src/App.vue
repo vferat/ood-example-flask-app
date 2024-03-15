@@ -18,7 +18,6 @@ export default {
 
   mounted() {
       this.fetchData();
-      FmriprepForm.$on('alert', this.showAlert);
   },
 
   methods: {
@@ -51,13 +50,13 @@ export default {
 <template>
 
 <main role="main">
-  
+
   <div v-if="alert" :style="{ backgroundColor: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'yellow' : 'green', padding: '10px' }">
     {{ alert.message }}
   </div>
 
   <div v-if = "showModal">
-    <FmriprepForm @close="toggleModal"/>
+    <FmriprepForm @close="toggleModal" @alert="showAlert"/>
   </div>
 
   <section class="jumbotron text-center">

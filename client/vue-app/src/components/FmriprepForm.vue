@@ -69,12 +69,12 @@ export default {
                   console.log(data.job_id);
                   this.job_id = data.job_id;
                   this.$emit('message');
-                  console.log('message');
+                  console.log('emit message');
               })
               .catch(error => {
                   console.error('Error fetching data:', error.message);
                   this.$emit('message');
-                  console.log('message');
+                  console.log('emit message');
               });
           this.$emit('close');
       },

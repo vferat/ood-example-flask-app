@@ -36,9 +36,9 @@ export default {
       this.showModal = !this.showModal;
       console.log('showModal:', this.showModal);
     },
-    showAlert(data) {
-      console.log('showAlert:', data);
-      this.alert = data;
+    showAlert() {
+      console.log('showAlert');
+      this.alert = 1;
       setTimeout(this.hideAlert, 10000);
     },
     hideAlert() {

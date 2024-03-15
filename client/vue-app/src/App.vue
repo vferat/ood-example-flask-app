@@ -51,9 +51,7 @@ export default {
 
 <main role="main">
 
-  <div v-if = "showModal">
-    <FmriprepForm @message="showAlert"/>
-  </div>
+  <FmriprepForm @message="showAlert"/>
 
   <div v-if="alert" :style="{ backgroundColor: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'yellow' : 'green', padding: '10px' }">
     {{ alert.message }}

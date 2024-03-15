@@ -82,8 +82,8 @@ export default {
           this.toggleThis();
       },
       toggleThis() {
-        this.show = !this.show;
-        console.log('toggleThis');
+        this.show = ! this.show;
+        console.log(this.show);
       }
     }
 }

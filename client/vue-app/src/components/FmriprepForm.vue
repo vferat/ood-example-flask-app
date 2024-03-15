@@ -68,11 +68,13 @@ export default {
               .then(data => {
                   console.log(data.job_id);
                   this.job_id = data.job_id;
-                  this.$emit('alert');
+                  this.$emit('message');
+                  console.log('message');
               })
               .catch(error => {
                   console.error('Error fetching data:', error.message);
-                  this.$emit('alert');
+                  this.$emit('message');
+                  console.log('message');
               });
           this.$emit('close');
       },

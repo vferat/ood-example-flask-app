@@ -37,6 +37,7 @@ export default {
       console.log('showModal:', this.showModal);
     },
     showAlert(data) {
+      console.log('showAlert:', data);
       this.alert = data;
       setTimeout(this.hideAlert, 10000);
     },
@@ -51,12 +52,12 @@ export default {
 
 <main role="main">
 
-  <div v-if="alert" :style="{ backgroundColor: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'yellow' : 'green', padding: '10px' }">
-    {{ alert.message }}
-  </div>
-
   <div v-if = "showModal">
     <FmriprepForm @close="toggleModal" @alert="showAlert"/>
+  </div>
+
+  <div v-if="alert" :style="{ backgroundColor: alert.type === 'error' ? 'red' : alert.type === 'warning' ? 'yellow' : 'green', padding: '10px' }">
+    {{ alert.message }}
   </div>
 
   <section class="jumbotron text-center">

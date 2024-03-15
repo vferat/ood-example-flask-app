@@ -71,7 +71,6 @@ export default {
                   this.$emit('alert', { type: 'success',
                                          message: 'Job ' + this.job_id + ' submitted!'
                                       });
-                  console.log('emit alert');
               })
               .catch(error => {
                   console.error('Error fetching data:', error.message);
